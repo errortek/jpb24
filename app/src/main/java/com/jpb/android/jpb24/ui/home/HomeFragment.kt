@@ -1,5 +1,6 @@
 package com.jpb.android.jpb24.ui.home
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,10 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        val oemtext: TextView = binding.textView2
+        oemtext.text = Build.MANUFACTURER
+        val devicetext: TextView = binding.textView4
+        devicetext.text = Build.MODEL
         return root
     }
 
