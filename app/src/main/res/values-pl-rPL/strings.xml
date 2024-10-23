@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">jpb24</string>
+    <string name="title_home">Strona główna</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Powiadomienia</string>
+</resources>
