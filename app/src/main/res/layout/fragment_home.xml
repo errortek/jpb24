@@ -31,6 +31,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
                         android:text="General specifications"
+                        android:textSize="16sp"
                         android:textStyle="bold"></TextView>
 
                     <LinearLayout
@@ -42,7 +43,8 @@
                             android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="OEM" />
+                            android:text="OEM"
+                            android:textStyle="bold" />
 
                         <View
                             android:layout_width="0dp"
@@ -65,7 +67,8 @@
                             android:id="@+id/textView3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Device" />
+                            android:text="Device"
+                            android:textStyle="bold" />
 
                         <View
                             android:layout_width="0dp"
@@ -88,7 +91,8 @@
                             android:id="@+id/textView5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="CPU" />
+                            android:text="CPU"
+                            android:textStyle="bold" />
 
                         <View
                             android:layout_width="0dp"
@@ -111,7 +115,8 @@
                             android:id="@+id/textView7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Memory" />
+                            android:text="Memory"
+                            android:textStyle="bold" />
 
                         <View
                             android:layout_width="0dp"
