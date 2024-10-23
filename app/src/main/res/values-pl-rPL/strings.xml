@@ -2,6 +2,11 @@
 <resources>
     <string name="app_name">jpb24</string>
     <string name="title_home">Strona główna</string>
-    <string name="title_hardware">Hardware</string>
-    <string name="title_software">Powiadomienia</string>
+    <string name="title_hardware">Sprzęt</string>
+    <string name="title_software">Oprogramowanie</string>
+    <string name="oem">Producent</string>
+    <string name="general_specifications">Specyfikacje ogólne</string>
+    <string name="device">Urządzenie</string>
+    <string name="cpu">Procesor</string>
+    <string name="memory">Pamięć</string>
 </resources>
