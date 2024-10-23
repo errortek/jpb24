@@ -30,7 +30,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:text="General specifications"
+                        android:text="@string/general_specifications"
                         android:textSize="16sp"
                         android:textStyle="bold"></TextView>
 
@@ -43,7 +43,7 @@
                             android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="OEM"
+                            android:text="@string/oem"
                             android:textStyle="bold" />
 
                         <View
@@ -67,7 +67,7 @@
                             android:id="@+id/textView3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Device"
+                            android:text="@string/device"
                             android:textStyle="bold" />
 
                         <View
@@ -91,7 +91,7 @@
                             android:id="@+id/textView5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="CPU"
+                            android:text="@string/cpu"
                             android:textStyle="bold" />
 
                         <View
@@ -115,7 +115,7 @@
                             android:id="@+id/textView7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Memory"
+                            android:text="@string/memory"
                             android:textStyle="bold" />
 
                         <View

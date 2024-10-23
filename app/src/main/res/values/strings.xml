@@ -3,4 +3,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="oem">OEM</string>
+    <string name="general_specifications">General specifications</string>
+    <string name="device">Device</string>
+    <string name="cpu">CPU</string>
+    <string name="memory">Memory</string>
 </resources>
