@@ -1,4 +1,4 @@
-package com.jpb.android.jpb24.ui.notifications
+package com.errortek.jpb24.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

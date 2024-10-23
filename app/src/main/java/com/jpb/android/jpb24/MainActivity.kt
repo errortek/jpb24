@@ -1,4 +1,4 @@
-package com.jpb.android.jpb24
+package com.errortek.jpb24
 
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -14,7 +14,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigationrail.NavigationRailView
-import com.jpb.android.jpb24.databinding.ActivityMainBinding
+import com.errortek.jpb24.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

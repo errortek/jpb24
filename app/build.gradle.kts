@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.jpb.android.jpb24"
+    namespace = "com.errortek.jpb24"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.jpb.android.jpb24"
+        applicationId = "com.errortek.jpb24"
         minSdk = 27
         targetSdk = 35
         versionCode = 1

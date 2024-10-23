@@ -1,4 +1,4 @@
-package com.jpb.android.jpb24
+package com.errortek.jpb24
 
 import org.junit.Test
 

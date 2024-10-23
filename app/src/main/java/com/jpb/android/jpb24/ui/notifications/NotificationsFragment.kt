@@ -1,4 +1,4 @@
-package com.jpb.android.jpb24.ui.notifications
+package com.errortek.jpb24.ui.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.jpb.android.jpb24.databinding.FragmentNotificationsBinding
+import com.errortek.jpb24.databinding.FragmentNotificationsBinding
 
 class NotificationsFragment : Fragment() {
 
