@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">jpb24</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_hardware">Hardware</string>
+    <string name="title_software">Software</string>
 </resources>
