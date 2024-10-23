@@ -4,9 +4,9 @@
     <string name="title_home">Strona główna</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Powiadomienia</string>
-    <string name="oem">OEM</string>
-    <string name="general_specifications">General specifications</string>
-    <string name="device">Device</string>
-    <string name="cpu">CPU</string>
-    <string name="memory">Memory</string>
+    <string name="oem">Producent</string>
+    <string name="general_specifications">Specyfikacje ogólne</string>
+    <string name="device">Urządzenie</string>
+    <string name="cpu">Procesor</string>
+    <string name="memory">Pamięć</string>
 </resources>
