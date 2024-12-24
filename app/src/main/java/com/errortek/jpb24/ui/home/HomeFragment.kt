@@ -53,7 +53,7 @@ class HomeFragment : Fragment() {
         if (Build.VERSION.SDK_INT >= 31) {
             cputext.text = Build.SOC_MODEL
         } else {
-            cputext.text = getCPUInfo().toString()
+            cputext.text = "CPU model information is unavailable for Android 11 and below, due to the underlying API requiring at least Android 12."
         }
         val memtext: TextView = binding.textView8
         memtext.text = formatSize(totalMemory)
@@ -63,30 +63,6 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    @Throws(IOException::class)
-    fun getCPUInfo(): Map<String, String> {
-        val br = BufferedReader(FileReader("/proc/cpuinfo"))
-
-        var str: String
-
-        val output: MutableMap<String, String> = HashMap()
-
-        while ((br.readLine().also { str = it }) != null) {
-            val data = str.split(":".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-
-            if (data.size > 1) {
-                var key = data[0].trim { it <= ' ' }.replace(" ", "_")
-                if (key == "model_name") key = "cpu_model"
-
-                output[key] = data[1].trim { it <= ' ' }
-            }
-        }
-
-        br.close()
-
-        return output
     }
 
     private fun formatSize(size: Long): String {
