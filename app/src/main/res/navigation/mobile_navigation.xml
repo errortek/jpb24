@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.errortek.jpb24.ui.home.HomeFragment"
+        android:name="com.jpb.jpb24.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_hardware"
-        android:name="com.errortek.jpb24.ui.dashboard.DashboardFragment"
+        android:name="com.jpb.jpb24.ui.dashboard.DashboardFragment"
         android:label="@string/title_hardware"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_software"
-        android:name="com.errortek.jpb24.ui.notifications.NotificationsFragment"
+        android:name="com.jpb.jpb24.ui.notifications.NotificationsFragment"
         android:label="@string/title_software"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

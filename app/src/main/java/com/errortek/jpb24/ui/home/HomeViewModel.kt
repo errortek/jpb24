@@ -1,4 +1,4 @@
-package com.errortek.jpb24.ui.home
+package com.jpb.jpb24.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

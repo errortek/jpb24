@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.errortek.jpb24"
+    namespace = "com.jpb.jpb24"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.errortek.jpb24"
+        applicationId = "com.jpb.jpb24"
         minSdk = 27
         targetSdk = 35
         versionCode = 2
@@ -31,7 +31,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
     kotlinOptions {
-        jvmTarget = "21"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true

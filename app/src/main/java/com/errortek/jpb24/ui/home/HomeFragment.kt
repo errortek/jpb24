@@ -1,4 +1,4 @@
-package com.errortek.jpb24.ui.home
+package com.jpb.jpb24.ui.home
 
 import android.app.ActivityManager
 import android.content.Context
@@ -10,8 +10,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.errortek.jpb24.R
-import com.errortek.jpb24.databinding.FragmentHomeBinding
+import com.jpb.jpb24.R
+import com.jpb.jpb24.databinding.FragmentHomeBinding
 import java.io.BufferedReader
 import java.io.FileReader
 import java.io.IOException
