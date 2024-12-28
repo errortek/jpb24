@@ -41,13 +41,25 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.appcompat)  {
+        exclude(group = "com.google.android.material", module = "material")
+    }
+    //implementation(libs.material)
+    implementation(libs.androidx.constraintlayout)  {
+        exclude(group = "com.google.android.material", module = "material")
+    }
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)  {
+        exclude(group = "com.google.android.material", module = "material")
+    }
+    implementation(libs.androidx.navigation.ui.ktx) {
+        exclude(group = "com.google.android.material", module = "material")
+    }
+    implementation(files("C:\\Users\\jpb\\Downloads\\lib-release.aar"))
+    implementation(libs.androidx.dynamicanimation)
+    implementation(libs.androidx.cardview)
+    implementation(libs.androidx.coordinatorlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

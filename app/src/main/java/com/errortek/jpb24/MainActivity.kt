@@ -2,6 +2,7 @@ package com.jpb.jpb24
 
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.view.MenuItem
 import android.view.ViewGroup
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
 import com.google.android.material.navigationrail.NavigationRailView
 import com.jpb.jpb24.databinding.ActivityMainBinding
 
@@ -38,13 +40,14 @@ class MainActivity : AppCompatActivity() {
             WindowInsetsCompat.CONSUMED
         }
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
         var width = displayMetrics.widthPixels / displayMetrics.density
 
         if (width < 600) {
-            val navView: BottomNavigationView = binding.navView as BottomNavigationView
+            val navView: BottomNavigationView = findViewById(R.id.nav_view)
             val navController = findNavController(R.id.nav_host_fragment_activity_main)
             // Passing each menu ID as a set of Ids because each
             // menu should be considered as top level destinations.
@@ -56,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             setupActionBarWithNavController(navController, appBarConfiguration)
             navView.setupWithNavController(navController)
         } else {
-            val navView: NavigationRailView = binding.navView as NavigationRailView
+            val navView: NavigationRailView = findViewById(R.id.nav_view)
             val navController = findNavController(R.id.nav_host_fragment_activity_main)
             // Passing each menu ID as a set of Ids because each
             // menu should be considered as top level destinations.
@@ -68,5 +71,7 @@ class MainActivity : AppCompatActivity() {
             setupActionBarWithNavController(navController, appBarConfiguration)
             navView.setupWithNavController(navController)
         }
+
+        binding.toolbar.setTitle("Device specifications")
     }
 }
