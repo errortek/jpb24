@@ -1,22 +1,23 @@
 package com.jpb.jpb24
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.ViewGroup
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.updateLayoutParams
 import androidx.core.view.updatePadding
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigationrail.NavigationRailView
 import com.jpb.jpb24.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -73,5 +74,26 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.toolbar.setTitle("Device specifications")
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.overflow_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection.
+        return when (item.itemId) {
+            R.id.navigation_settings -> {
+                val i = Intent(
+                    applicationContext,
+                    SettingsActivity::class.java
+                )
+                startActivity(i)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

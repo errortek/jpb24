@@ -60,6 +60,9 @@ dependencies {
     implementation(libs.androidx.dynamicanimation)
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.coordinatorlayout)
+    implementation(libs.androidx.preference) {
+        exclude(group = "com.google.android.material", module = "material")
+    }
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
