@@ -2,12 +2,20 @@ package com.jpb.jpb24.ui.home
 
 import android.app.ActivityManager
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.toDrawable
+import androidx.core.widget.ImageViewCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.jpb.jpb24.R
@@ -57,7 +65,23 @@ class HomeFragment : Fragment() {
         }
         val memtext: TextView = binding.textView8
         memtext.text = formatSize(totalMemory)
+        val displayMetrics = DisplayMetrics()
+        var width = displayMetrics.widthPixels / displayMetrics.density
+        var deviceImage: Drawable = resources.getDrawable(R.drawable.ic_devices_24dp)
+        binding.imageView.setTint(com.google.android.material.R.color.material_dynamic_primary50)
+
+        if (width < 600) {
+            deviceImage = resources.getDrawable(R.drawable.tablet)
+            binding.imageView.setImageDrawable(deviceImage)
+        } else {
+            deviceImage = resources.getDrawable(R.drawable.cellphone)
+            binding.imageView.setImageDrawable(deviceImage)
+        }
         return root
+    }
+
+    fun ImageView.setTint(@ColorRes colorRes: Int) {
+        ImageViewCompat.setImageTintList(this, ColorStateList.valueOf(ContextCompat.getColor(context, colorRes)))
     }
 
     override fun onDestroyView() {
