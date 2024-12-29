@@ -17,6 +17,8 @@ dynamicanimation = "1.1.0-alpha03"
 cardview = "1.0.0"
 coordinatorlayout = "1.2.0"
 preference = "1.2.1"
+aboutlibraries = "11.2.3"
+activity = "1.9.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,8 +36,11 @@ androidx-dynamicanimation = { group = "androidx.dynamicanimation", name = "dynam
 androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
 androidx-coordinatorlayout = { group = "androidx.coordinatorlayout", name = "coordinatorlayout", version.ref = "coordinatorlayout" }
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
+aboutlibraries-core = { module = "com.mikepenz:aboutlibraries-core", version.ref = "aboutlibraries" }
+aboutlibraries-ui = { module = "com.mikepenz:aboutlibraries", version.ref = "aboutlibraries" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
+aboutlibraries = { id = "com.mikepenz.aboutlibraries.plugin", version.ref = "aboutlibraries" }

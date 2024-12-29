@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.aboutlibraries)
 }
 
 android {
@@ -61,6 +62,13 @@ dependencies {
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.coordinatorlayout)
     implementation(libs.androidx.preference) {
+        exclude(group = "com.google.android.material", module = "material")
+    }
+    implementation(libs.aboutlibraries.core)
+    implementation(libs.aboutlibraries.ui) {
+        exclude(group = "com.google.android.material", module = "material")
+    }
+    implementation(libs.androidx.activity) {
         exclude(group = "com.google.android.material", module = "material")
     }
     testImplementation(libs.junit)
