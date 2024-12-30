@@ -14,15 +14,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.toDrawable
 import androidx.core.widget.ImageViewCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.jpb.jpb24.R
 import com.jpb.jpb24.databinding.FragmentHomeBinding
-import java.io.BufferedReader
-import java.io.FileReader
-import java.io.IOException
 import java.text.DecimalFormat
 
 
@@ -65,6 +61,10 @@ class HomeFragment : Fragment() {
         }
         val memtext: TextView = binding.textView8
         memtext.text = formatSize(totalMemory)
+        val androidVerTextView: TextView = binding.OSDetails
+        androidVerTextView.text = Build.VERSION.RELEASE + " (" + Build.VERSION.CODENAME + ")"
+        val securityPatchTextView: TextView = binding.SecurityPatchDetails
+        securityPatchTextView.text = Build.VERSION.SECURITY_PATCH
         val displayMetrics = DisplayMetrics()
         var width = displayMetrics.widthPixels / displayMetrics.density
         var deviceImage: Drawable = resources.getDrawable(R.drawable.ic_devices_24dp)
@@ -76,6 +76,35 @@ class HomeFragment : Fragment() {
         } else {
             deviceImage = resources.getDrawable(R.drawable.cellphone)
             binding.imageView.setImageDrawable(deviceImage)
+        }
+        var androidVersionImage: Drawable
+        if (Build.VERSION.SDK_INT == 27) {
+            androidVersionImage = resources.getDrawable(R.drawable.ic_android_o_mr1)
+            binding.imageView2.setImageDrawable(androidVersionImage)
+        } else if (Build.VERSION.SDK_INT == 28) {
+            androidVersionImage = resources.getDrawable(R.drawable.ic_android_p)
+            binding.imageView2.setImageDrawable(androidVersionImage)
+        } else if (Build.VERSION.SDK_INT == 29) {
+            androidVersionImage = resources.getDrawable(R.drawable.ic_android_q)
+            binding.imageView2.setImageDrawable(androidVersionImage)
+        } else if (Build.VERSION.SDK_INT == 30) {
+            androidVersionImage = resources.getDrawable(R.drawable.ic_android_r)
+            binding.imageView2.setImageDrawable(androidVersionImage)
+        } else if (Build.VERSION.SDK_INT == 31 || Build.VERSION.SDK_INT == 32) {
+            androidVersionImage = resources.getDrawable(R.drawable.ic_android_s)
+            binding.imageView2.setImageDrawable(androidVersionImage)
+        } else if (Build.VERSION.SDK_INT == 33) {
+            androidVersionImage = resources.getDrawable(R.drawable.ic_android_t)
+            binding.imageView2.setImageDrawable(androidVersionImage)
+        } else if (Build.VERSION.SDK_INT == 34) {
+            androidVersionImage = resources.getDrawable(R.drawable.ic_android_u)
+            binding.imageView2.setImageDrawable(androidVersionImage)
+        } else if (Build.VERSION.SDK_INT == 35) {
+            androidVersionImage = resources.getDrawable(R.drawable.ic_android_v)
+            binding.imageView2.setImageDrawable(androidVersionImage)
+        } else {
+            androidVersionImage = resources.getDrawable(R.drawable.ic_android)
+            binding.imageView2.setImageDrawable(androidVersionImage)
         }
         return root
     }
