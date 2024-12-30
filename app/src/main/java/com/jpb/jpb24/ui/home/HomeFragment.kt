@@ -68,8 +68,9 @@ class HomeFragment : Fragment() {
         val displayMetrics = DisplayMetrics()
         var width = displayMetrics.widthPixels / displayMetrics.density
         var deviceImage: Drawable = resources.getDrawable(R.drawable.ic_devices_24dp)
-        binding.imageView.setTint(com.google.android.material.R.color.material_dynamic_primary50)
-
+        if (Build.VERSION.SDK_INT >= 31) {
+            binding.imageView.setTint(com.google.android.material.R.color.material_dynamic_primary50)
+        }
         if (width < 600) {
             deviceImage = resources.getDrawable(R.drawable.tablet)
             binding.imageView.setImageDrawable(deviceImage)

@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -51,7 +52,9 @@ class MainActivity : AppCompatActivity() {
 
         if (width < 600) {
             val navView: BottomNavigationView = findViewById(R.id.nav_view)
-            val navController = findNavController(R.id.nav_host_fragment_activity_main)
+            val navigationHost =
+                supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+            val navController = navigationHost.navController
             // Passing each menu ID as a set of Ids because each
             // menu should be considered as top level destinations.
             val appBarConfiguration = AppBarConfiguration(
@@ -63,7 +66,9 @@ class MainActivity : AppCompatActivity() {
             navView.setupWithNavController(navController)
         } else {
             val navView: NavigationRailView = findViewById(R.id.nav_view)
-            val navController = findNavController(R.id.nav_host_fragment_activity_main)
+            val navigationHost =
+                supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+            val navController = navigationHost.navController
             // Passing each menu ID as a set of Ids because each
             // menu should be considered as top level destinations.
             val appBarConfiguration = AppBarConfiguration(

@@ -17,6 +17,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.jpb.jpb24.R
 import com.jpb.jpb24.databinding.FragmentDashboardBinding
 import com.jpb.jpb24.utils.CpuInformation
 import java.text.DecimalFormat
@@ -57,6 +59,7 @@ class DashboardFragment : Fragment() {
         if (Build.VERSION.SDK_INT >= 31) {
             cputext.text = Build.SOC_MODEL
         } else {
+            binding.imageButton.visibility = View.VISIBLE
             cputext.text = "CPU model information is unavailable for Android 11 and below, due to the underlying API requiring at least Android 12."
         }
         val memtext: TextView = binding.RAMDetails
@@ -65,7 +68,19 @@ class DashboardFragment : Fragment() {
         gputext.text = gpu_vendor
         val storagetext: TextView = binding.StorageDetails
         storagetext.text = formatSize(getUsedInternalMemorySize()) + " / " + formatSize(getTotalInternalMemorySize())
-        binding.imageView.setTint(com.google.android.material.R.color.material_dynamic_primary50)
+        if (Build.VERSION.SDK_INT >= 31) {
+            binding.imageView.setTint(com.google.android.material.R.color.material_dynamic_primary50)
+        }
+        val context = activity?.applicationContext
+        binding.imageButton.setOnClickListener {
+            if (context != null) {
+                MaterialAlertDialogBuilder(context)
+                    .setIcon(R.drawable.alert)
+                    .setTitle("CPU model information unavailable")
+                    .setMessage("Fetching CPU model information is only possible on Android 12 (API 31) and newer.")
+                    .show()
+            }
+        }
         return root
     }
 
