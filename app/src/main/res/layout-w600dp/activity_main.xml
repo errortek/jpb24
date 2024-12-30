@@ -30,6 +30,9 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/activity_main_content"/>
+    <include layout="@layout/activity_main_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="152dp"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

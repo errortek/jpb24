@@ -39,6 +39,7 @@
                         android:id="@+id/imageView"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
+                        android:layout_marginRight="4dp"
                         android:foregroundTint="?android:attr/colorPrimary"
                         android:foregroundTintMode="src_over"
                         tools:srcCompat="@drawable/cellphone" />
@@ -114,6 +115,7 @@
                         android:id="@+id/imageView2"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
+                        android:layout_marginRight="4dp"
                         tools:srcCompat="@drawable/cellphone" />
 
                     <LinearLayout

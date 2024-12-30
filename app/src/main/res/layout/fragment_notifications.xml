@@ -31,6 +31,7 @@
                         android:id="@+id/OSImageView"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
+                        android:layout_marginRight="4dp"
                         tools:srcCompat="@drawable/cellphone" />
 
                     <LinearLayout

@@ -2,6 +2,7 @@ package com.jpb.jpb24.ui.dashboard
 
 import android.app.ActivityManager
 import android.content.Context
+import android.content.res.ColorStateList
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -9,7 +10,11 @@ import android.os.StatFs
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.jpb.jpb24.databinding.FragmentDashboardBinding
@@ -60,6 +65,7 @@ class DashboardFragment : Fragment() {
         gputext.text = gpu_vendor
         val storagetext: TextView = binding.StorageDetails
         storagetext.text = formatSize(getUsedInternalMemorySize()) + " / " + formatSize(getTotalInternalMemorySize())
+        binding.imageView.setTint(com.google.android.material.R.color.material_dynamic_primary50)
         return root
     }
 
@@ -110,5 +116,9 @@ class DashboardFragment : Fragment() {
         } else {
             -11111111
         }
+    }
+
+    fun ImageView.setTint(@ColorRes colorRes: Int) {
+        ImageViewCompat.setImageTintList(this, ColorStateList.valueOf(ContextCompat.getColor(context, colorRes)))
     }
 }
