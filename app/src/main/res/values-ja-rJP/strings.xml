@@ -23,4 +23,6 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="resource_declaration">Icons from the Material Design Icons icon set</string>
+    <string name="android_version">Android version</string>
+    <string name="security_patch">Security patch</string>
 </resources>
