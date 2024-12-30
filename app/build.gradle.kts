@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        create("release") {
+            storeFile = file("C:\\Users\\jpb\\Documents\\keys.jks")
+            storePassword = "1223jpb?"
+            keyAlias = "key0"
+            keyPassword = "1223key0?"
+        }
+    }
     namespace = "com.jpb.jpb24"
     compileSdk = 35
 
@@ -25,6 +33,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
