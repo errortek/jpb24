@@ -74,10 +74,6 @@ dependencies {
     implementation(libs.androidx.browser) {
         exclude(group = "com.google.android.material", module = "material")
     }
-    implementation(libs.coil)
-    implementation(libs.square.okHttp)
-    implementation(libs.square.okio)
-    implementation(libs.recyclerViewHelper)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
