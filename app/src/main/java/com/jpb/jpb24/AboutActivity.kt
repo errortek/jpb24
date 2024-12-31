@@ -80,6 +80,7 @@ class AboutActivity : LibsActivity() {
                             contributors.append("<b>What's New</b>")
                                 .append("<br>- UI redesign, using the SurgeDL (SurgeOS Design Language) libraries")
                                 .append("<br>- Introduce an about page")
+                                .append("<br>- Introduce the ability to check more system information, such as the kernel version, storage capacity and battery capacity")
                                 .append("<br>- Dependency updates")
                             MaterialAlertDialogBuilder(context)
                                 .setIcon(R.drawable.alert_decagram)

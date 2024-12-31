@@ -48,6 +48,10 @@ android {
     }
 }
 
+aboutLibraries {
+    configPath = "config"
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)

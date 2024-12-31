@@ -1,0 +1,16 @@
+{
+  "uniqueId": "com.jpb.surge.design:design",
+  "developers": [
+    {
+      "name": "jpb",
+      "organisationUrl": "https://jpb896.vercel.app"
+    }
+  ],
+  "description": "Modern and easily customizable UI components, used in SurgeOS System Apps",
+  "name": "SurgeOS Design Language (SurgeDL) Components",
+  "website": "https://github.com/Surge-OS/surge-dl-components",
+  "artifactVersion": "1.2.0",
+  "licenses": [
+    "Apache-2.0"
+  ]
+}
