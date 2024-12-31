@@ -1,8 +1,8 @@
 package com.jpb.jpb24.ui.dashboard
 
+import android.annotation.SuppressLint
 import android.app.ActivityManager
 import android.content.Context
-import android.content.DialogInterface
 import android.content.res.ColorStateList
 import android.os.Build
 import android.os.Bundle
@@ -70,6 +70,8 @@ class DashboardFragment : Fragment() {
         gputext.text = gpu_vendor
         val storagetext: TextView = binding.StorageDetails
         storagetext.text = formatSize(getUsedInternalMemorySize()) + " / " + formatSize(getTotalInternalMemorySize())
+        val batterytext: TextView = binding.BatteryDetails
+        batterytext.text = getBatteryCapacity().toString() + "mAh"
         if (Build.VERSION.SDK_INT >= 31) {
             binding.imageView.setTint(com.google.android.material.R.color.material_dynamic_primary50)
         }
@@ -133,6 +135,25 @@ class DashboardFragment : Fragment() {
         } else {
             -11111111
         }
+    }
+
+    @SuppressLint("PrivateApi")
+    fun getBatteryCapacity(): Double {
+        val powerProfile: Any
+        var batteryCapacity = 0.0
+        val POWER_PROFILE_CLASS = "com.android.internal.os.PowerProfile"
+
+        try {
+            powerProfile = Class.forName(POWER_PROFILE_CLASS)
+                .getConstructor(Context::class.java)
+                .newInstance(this.context)
+            batteryCapacity = Class.forName(POWER_PROFILE_CLASS)
+                .getMethod("getBatteryCapacity")
+                .invoke(powerProfile) as Double
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return batteryCapacity
     }
 
     fun ImageView.setTint(@ColorRes colorRes: Int) {
