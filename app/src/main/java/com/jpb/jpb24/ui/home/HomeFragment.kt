@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jpb.jpb24.R
 import com.jpb.jpb24.databinding.FragmentHomeBinding
 import java.text.DecimalFormat
@@ -57,7 +58,9 @@ class HomeFragment : Fragment() {
         if (Build.VERSION.SDK_INT >= 31) {
             cputext.text = Build.SOC_MODEL
         } else {
-            cputext.text = "CPU model information is unavailable for Android 11 and below, due to the underlying API requiring at least Android 12."
+            binding.imageButton.visibility = View.VISIBLE
+            cputext.text = "Unavailable"
+            cputext.setTextColor(resources.getColor(com.google.android.material.R.color.design_default_color_error));
         }
         val memtext: TextView = binding.textView8
         memtext.text = formatSize(totalMemory)
@@ -67,7 +70,7 @@ class HomeFragment : Fragment() {
         securityPatchTextView.text = Build.VERSION.SECURITY_PATCH
         val displayMetrics = DisplayMetrics()
         var width = displayMetrics.widthPixels / displayMetrics.density
-        var deviceImage: Drawable = resources.getDrawable(R.drawable.ic_devices_24dp)
+        var deviceImage: Drawable
         if (Build.VERSION.SDK_INT >= 31) {
             binding.imageView.setTint(com.google.android.material.R.color.material_dynamic_primary50)
         }
@@ -107,10 +110,20 @@ class HomeFragment : Fragment() {
             androidVersionImage = resources.getDrawable(R.drawable.ic_android)
             binding.imageView2.setImageDrawable(androidVersionImage)
         }
+        binding.imageButton.setOnClickListener {
+            if (context != null) {
+                MaterialAlertDialogBuilder(requireContext())
+                    .setIcon(R.drawable.alert)
+                    .setTitle("CPU model information unavailable")
+                    .setMessage("Fetching CPU model information is only possible on Android 12 (API 31) and newer.")
+                    .setPositiveButton("OK", null)
+                    .show()
+            }
+        }
         return root
     }
 
-    fun ImageView.setTint(@ColorRes colorRes: Int) {
+    private fun ImageView.setTint(@ColorRes colorRes: Int) {
         ImageViewCompat.setImageTintList(this, ColorStateList.valueOf(ContextCompat.getColor(context, colorRes)))
     }
 

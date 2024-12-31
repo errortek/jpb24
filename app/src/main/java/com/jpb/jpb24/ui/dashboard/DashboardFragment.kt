@@ -2,6 +2,7 @@ package com.jpb.jpb24.ui.dashboard
 
 import android.app.ActivityManager
 import android.content.Context
+import android.content.DialogInterface
 import android.content.res.ColorStateList
 import android.os.Build
 import android.os.Bundle
@@ -60,7 +61,8 @@ class DashboardFragment : Fragment() {
             cputext.text = Build.SOC_MODEL
         } else {
             binding.imageButton.visibility = View.VISIBLE
-            cputext.text = "CPU model information is unavailable for Android 11 and below, due to the underlying API requiring at least Android 12."
+            cputext.text = "Unavailable"
+            cputext.setTextColor(resources.getColor(com.google.android.material.R.color.design_default_color_error));
         }
         val memtext: TextView = binding.RAMDetails
         memtext.text = formatSize(totalMemory)
@@ -71,13 +73,13 @@ class DashboardFragment : Fragment() {
         if (Build.VERSION.SDK_INT >= 31) {
             binding.imageView.setTint(com.google.android.material.R.color.material_dynamic_primary50)
         }
-        val context = activity?.applicationContext
         binding.imageButton.setOnClickListener {
             if (context != null) {
-                MaterialAlertDialogBuilder(context)
+                MaterialAlertDialogBuilder(requireContext())
                     .setIcon(R.drawable.alert)
                     .setTitle("CPU model information unavailable")
                     .setMessage("Fetching CPU model information is only possible on Android 12 (API 31) and newer.")
+                    .setPositiveButton("OK", null)
                     .show()
             }
         }

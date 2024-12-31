@@ -16,14 +16,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:text="@string/general_specifications"
-                android:textSize="24sp"
-                android:textStyle="bold"></TextView>
-
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -196,6 +188,14 @@
                             android:layout_height="wrap_content"
                             android:text="@string/cpu"
                             android:textStyle="bold" />
+                        <ImageButton
+                            android:id="@+id/imageButton"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/information_outline"
+                            android:visibility="gone" />
 
                         <View
                             android:layout_width="0dp"
